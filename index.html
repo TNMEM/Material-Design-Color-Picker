@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>Material Design Color Picker</title>
+
+  <!-- CSS  -->
+  <!-- could include Roboto from googleapis too instead of local. -->
+  <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'> -->
+  <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <style>
+    .fText {
+      color: white;
+    }
+    
+    #cHistory ul {
+      background: #212121;
+      padding: 2px;
+      height: 200px;
+      overflow: scroll;
+    }
+    
+    #cHistory ul li {
+      margin: 3px;
+    }
+    
+    .cTable td {
+      padding: 8px;
+      font-size: .7em;
+    }
+    
+    .cTable td:first-child {
+      width: 200px;
+      font-size: 1em;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- #f44336 is the same as materializecss red -->
+  <nav id="navcolor" style="background-color:#f44336" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">M.D.C.P.</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class='dropdown-button btn-floating btn-large waves-effect waves-light black' href="#" data-activates='helpnav'><i class="material-icons">help</i></a></li>
+      </ul>
+      <ul id='helpnav' class='dropdown-content'>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a class='dropdown-button btn-large waves-effect waves-light white' href="#" data-activates='helpside'><i class="material-icons">help</i></a></li>
+      </ul>
+      <ul id='helpside' class='dropdown-content'>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse black"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br>
+      <br>
+      <h3 class="header center amber-text lighten-4-text">Material Design Color Picker</h3>
+      <div class="row center">
+        <h5 class="header col s12 light">Explore Material Design colors with color picker and palettes.</h5>
+      </div>
+      <div class="row center">
+        <!-- 
+        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started ... <input id="output" value="#f44336"></a>
+        -->
+        <div class="btn-large waves-effect waves-light amber lighten-4 grey-text darken-2-text">
+          <input id="output" value="#f44336"> ...&nbsp;Pick&nbsp;a&nbsp;Color
+        </div>
+        <div>
+        Powered by  <a href="https://www.google.com/design/spec/style/color.html" target="_blank">Google Material Design</a>,
+        <a href="http://jscolor.com/examples/" target="_blank">jscolor</a>,
+        <a href="http://raphaeljs.com/" target="_blank">Raphaël</a>,
+        <a href="http://bgrins.github.io/TinyColor/" target="_blank">TinyColor</a>,
+        <a href="http://materializecss.com/" target="_blank">materializecss</a>
+</div>
+      </div>
+      <br>
+      <br>
+
+    </div>
+
+    <div class="container">
+      <div class="section">
+        <!--   Icon Section   -->
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="icon-block">
+              <div class="row">
+                <!-- jscolor.js < 2.0.0 is class="color" above is class="jscolor" -->
+                <!-- <input class="jscolor color  {hash:true}" value="#f44336" id="output"> -->
+                <!-- <input id="output" value="#f44336"> -->
+                <!--
+              <div class="input-field">
+                <input placeholder="Placeholder" id="output" type="text" class="validate">
+                <label for="output">Hex Color: Press enter to accept new typed color</label>
+              </div>
+              -->
+              </div>
+              Click History (click updates picker):
+              <br>
+              <div class="z-depth-2" id="cHistory">
+                <ul></ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6">
+            <h5 id="mainhed"></h5>
+            <p id="copy">
+              <input type="checkbox" id="mdColorsChk">
+              <label for="mdColorsChk">&nbsp;Lock&nbsp;picker&nbsp;to&nbsp;Material&nbsp;Colors</label>
+              <br>
+              <input type="checkbox" id="mdMainChk">
+              <label for="mdMainChk">&nbsp;Limit&nbsp;to&nbsp;Main&nbsp;'500'&nbsp;Colors</label>
+              <br>
+            </p>
+            Picker Values:
+            <br>
+            <table id="values">
+              <thead></thead>
+              <tbody>
+                <tr>
+                  <th>R</th>
+                  <td id="vr"></td>
+                  <th>H</th>
+                  <td id="vh"></td>
+                  <th>H</th>
+                  <td id="vh2"></td>
+                </tr>
+                <tr>
+                  <th>G</th>
+                  <td id="vg"></td>
+                  <th>S</th>
+                  <td id="vs"></td>
+                  <th>S</th>
+                  <td id="vs2"></td>
+                </tr>
+                <tr>
+                  <th>B</th>
+                  <td id="vb"></td>
+                  <th>B</th>
+                  <td id="vv"></td>
+                  <th>L</th>
+                  <td id="vl"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="section">
+        <div class="row">
+          <div class="cTable"></div>
+        </div>
+      </div>
+    </div>
+    <!-- #f44336 is the same as materialize cyan lighten-2 -->
+    <footer id="footcolor" style="background-color:#f44336" class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="fText">What to do</h5>
+            <p class="fText">
+              Setting the "Pick a Color" or clicking any of the color key bars sets it as the main first color in
+              "standard combinations" (the "MD" bars display closest Material-Design palette matches) and puts that pick in "history."
+              The top nav and the footer are set to the two colors of the new "Complement MD."
+            </p>
+
+          </div>
+          <div class="col l3 s12">
+            <h5 class="fText">Check Boxes</h5>
+            <p class="fText">
+              "Lock" doesn't allow non-Material-Color.
+              </p>
+              <p class="fText">
+              "Limit" further restricts to "500" Material Colors
+            </p>
+            </div>
+          <div class="col l3 s12">
+            <h5 class="fText">Have fun</h5>
+            <p class="fText">
+              Question: How do Google's Material Design colors relate to "standard"
+              color-theory combinations like Comlement and Triad? Pay around and have fun.
+              </p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          Design template made by <a class="fText" href="http://materializecss.com">Materialize</a>
+        </div>
+      </div>
+    </footer>
+
+    <!--  Scripts-->
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script src="libs/raphael.js"></script>
+    <script src='libs/tinycolor.js'></script>
+    <script src="libs/jscolor.js"></script>
+    <script src="wheels.js"></script>
+
+</body>
+
+</html>
