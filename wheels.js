@@ -281,7 +281,7 @@ Raphael(function() {
             //console.log("c2: ", c);
             $("#output").val(c);
             // don't have to import color...
-            //cp.importColor();
+            cp.importColor();
             setDials(c);
         };
     };

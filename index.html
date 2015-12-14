@@ -13,6 +13,7 @@
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <style>
+    /* diags is a way of getting a two-color square...*/
     #diags {
       background: linear-gradient(45deg, white 50%, #8b0 50%);
       background-size: 20px 20px;
@@ -48,24 +49,26 @@
 </head>
 
 <body>
-  <!-- #f44336 is the same as materializecss red -->
-  <nav id="navcolor" style="background-color:#f44336" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">M.D.C.P.</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a class='dropdown-button btn-floating btn-large waves-effect waves-light black' href="#" data-activates='helpnav'><i class="material-icons">help</i></a></li>
-      </ul>
-      <ul id='helpnav' class='dropdown-content'>
-      </ul>
+  <div class="navbar-fixed">
+    <!-- #f44336 is the same as materializecss red -->
+    <nav id="navcolor" style="background-color:#f44336" role="navigation">
+      <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">M.D.C.P.</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class='dropdown-button btn-floating btn-large waves-effect waves-light black' href="#" data-activates='helpnav'><i class="material-icons">help</i></a></li>
+        </ul>
+        <ul id='helpnav' class='dropdown-content'>
+        </ul>
 
-      <ul id="nav-mobile" class="side-nav">
-        <li><a class='dropdown-button btn-large waves-effect waves-light white' href="#" data-activates='helpside'><i class="material-icons">help</i></a></li>
-      </ul>
-      <ul id='helpside' class='dropdown-content'>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse black"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-
+        <ul id="nav-mobile" class="side-nav">
+          <li><a class='dropdown-button btn-large waves-effect waves-light white' href="#" data-activates='helpside'><i class="material-icons">help</i></a></li>
+        </ul>
+        <ul id='helpside' class='dropdown-content'>
+        </ul>
+        
+        <a href="#" data-activates="nav-mobile" class="button-collapse black"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </div>
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br>
