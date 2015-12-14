@@ -198,6 +198,10 @@ Raphael(function() {
                 $("#footcolor").attr("title", x[1][1] + " (" + x[1][0] + ")");
                 $(".fText").css("color", findReadable( x[1][0] ));
                 
+                $("#pBack").css("background-color", x[1][0]);
+                $("#pBack").attr("title", x[1][1] + " (" + x[1][0] + ")");
+                $("#pBack").css("color", findReadable( x[1][0] ));
+
                 $("#helpnav").append("<li>Footer: " + x[1][1] + " (" + x[1][0] + ")</li>");
                 $("#helpside").append("<li>Footer: " + x[1][1] + " (" + x[1][0] + ")</li>");
                 

@@ -13,6 +13,13 @@
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <style>
+    #diags {
+      background: linear-gradient(45deg, white 50%, #8b0 50%);
+      background-size: 20px 20px;
+      width: 20px;
+      height: 20px;
+    }
+    
     .fText {
       color: white;
     }
@@ -71,17 +78,18 @@
         <!-- 
         <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started ... <input id="output" value="#f44336"></a>
         -->
-        <div class="btn-large waves-effect waves-light amber lighten-4 grey-text darken-2-text">
+        <div id="pBack" class="btn-large waves-effect waves-light" style="background-color: black; color:white">
           <input id="output" value="#f44336"> ...&nbsp;Pick&nbsp;a&nbsp;Color
         </div>
+        <!-- <div id="diags"></div> -->
         <div>
-        Powered by <a href="https://github.com/TNMEM/Material-Design-Color-Picker" target="_blank">My GitHub</a>,
-        <a href="https://www.google.com/design/spec/style/color.html" target="_blank">Google Material Design</a>,
-        <a href="http://jscolor.com/examples/" target="_blank">jscolor</a>,
-        <a href="http://raphaeljs.com/" target="_blank">Raphaël</a>,
-        <a href="http://bgrins.github.io/TinyColor/" target="_blank">TinyColor</a>,
-        <a href="http://materializecss.com/" target="_blank">materializecss</a>
-</div>
+          Powered by <a href="https://github.com/TNMEM/Material-Design-Color-Picker" target="_blank">My GitHub</a>,
+          <a href="https://www.google.com/design/spec/style/color.html" target="_blank">Google Material Design</a>,
+          <a href="http://jscolor.com/examples/" target="_blank">jscolor</a>,
+          <a href="http://raphaeljs.com/" target="_blank">Raphaël</a>,
+          <a href="http://bgrins.github.io/TinyColor/" target="_blank">TinyColor</a>,
+          <a href="http://materializecss.com/" target="_blank">materializecss</a>
+        </div>
       </div>
       <br>
       <br>
@@ -172,9 +180,8 @@
           <div class="col l6 s12">
             <h5 class="fText">What to do</h5>
             <p class="fText">
-              Setting the "Pick a Color" or clicking any of the color key bars sets it as the main first color in
-              "standard combinations" (the "MD" bars display closest Material-Design palette matches) and puts that pick in "history."
-              The top nav and the footer are set to the two colors of the new "Complement MD."
+              Setting the "Pick a Color" or clicking any of the color key bars sets it as the main first color in "standard combinations" (the "MD" bars display closest Material-Design palette matches) and puts that pick in "history." The top nav and the footer are
+              set to the two colors of the new "Complement MD."
             </p>
 
           </div>
@@ -182,17 +189,16 @@
             <h5 class="fText">Check Boxes</h5>
             <p class="fText">
               "Lock" doesn't allow non-Material-Color.
-              </p>
-              <p class="fText">
+            </p>
+            <p class="fText">
               "Limit" further restricts to "500" Material Colors
             </p>
-            </div>
+          </div>
           <div class="col l3 s12">
             <h5 class="fText">Have fun</h5>
             <p class="fText">
-              Question: How do Google's Material Design colors relate to "standard"
-              color-theory combinations like Comlement and Triad? Pay around and have fun.
-              </p>
+              Question: How do Google's Material Design colors relate to "standard" color-theory combinations like Comlement and Triad? Pay around and have fun.
+            </p>
           </div>
         </div>
       </div>
