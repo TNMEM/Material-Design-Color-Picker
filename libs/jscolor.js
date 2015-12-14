@@ -377,6 +377,8 @@ var jscolor = {
 		this.hidePicker = function() {
 			if(isPickerOwner()) {
 				removePicker();
+				// lou king added this...
+				dispatchImmediateChange();
 			}
 		};
 

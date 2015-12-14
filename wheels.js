@@ -271,14 +271,16 @@ Raphael(function() {
     // cp.jsChange() will fire this handler from code I added in jscolor.js...
     var onchange = function() {
         return function() {
+            // grab value of picker...
             var c = $("#output").val();
-            if (c.substring(0, 1) != "#")
-                c += "#";
-            //console.log("c1: ", c);
+            // validate for good 6-digit hex color with crosshatch like #ffeeff ...
+            //if (! /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(c) ) {
+            if (! /(^#[0-9A-F]{6}$)/i.test(c) ) {
+                return;
+            }
+            console.log("c1: ", c);
             c = checkCalcColor(c);
-            //if (c.substring(0, 1) != "#")
-            //    c = "#" + c;
-            //console.log("c2: ", c);
+            console.log("c2: ", c);
             $("#output").val(c);
             // don't have to import color...
             cp.importColor();
@@ -286,7 +288,7 @@ Raphael(function() {
         };
     };
 
-    // handle enter key on output...
+    // handle enter key event on output...
     out.onkeypress = function(event) {
         // trigger on enter key...
         var x = event.which || event.keyCode;
@@ -295,7 +297,7 @@ Raphael(function() {
         }
     };
 
-    // handle click on history / cHistory li elements...
+    // handle click event on history / cHistory li elements...
     $('#cHistory > ul').on('click', '> li', function(e) {
         // update the picker with the new clicked color...
         var x = Raphael.color($(this).css("background-color")).hex;
@@ -306,7 +308,7 @@ Raphael(function() {
         cp.jsChange();
     });
 
-    // handle click on color keys / cTable elements "TD" elevents...
+    // handle click event on color keys / cTable elements "TD" elevents...
     $('.cTable').on('click', 'td', function(e) {
         var aTitle, aBgcolor, aColor;
         // if "title" has a space, then it's Md color needing Family key...
@@ -395,12 +397,7 @@ Raphael(function() {
 
     // twist the little readouts...
     function setDials(clr) {
-        //out.value = clr.replace(/^#(.)\1(.)\2(.)\3$/, "#$1$2$3");
-        //out.style.background = clr;
-        //out.style.background = "white";
-        //out.style.color = Raphael.rgb2hsb(clr).b < .5 ? "#fff" : "#000";
-        //out.style.color = "black";
-
+        
         colorKeys(clr);
 
         clr = Raphael.color(clr);
