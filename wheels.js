@@ -201,6 +201,8 @@ Raphael(function() {
                 $("#pBack").css("background-color", x[1][0]);
                 $("#pBack").attr("title", x[1][1] + " (" + x[1][0] + ")");
                 $("#pBack").css("color", findReadable( x[1][0] ));
+                
+                $("#diags").css("background", "linear-gradient(0deg, " + x[1][0] + " 50%, " + x[0][0] + " 50%");
 
                 $("#helpnav").append("<li>Footer: " + x[1][1] + " (" + x[1][0] + ")</li>");
                 $("#helpside").append("<li>Footer: " + x[1][1] + " (" + x[1][0] + ")</li>");

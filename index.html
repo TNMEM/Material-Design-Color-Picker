@@ -15,10 +15,10 @@
   <style>
     /* diags is a way of getting a two-color square...*/
     #diags {
-      background: linear-gradient(45deg, white 50%, #8b0 50%);
-      background-size: 20px 20px;
-      width: 20px;
-      height: 20px;
+      background: linear-gradient(0deg, grey 50%, black 50%);
+      background-size: 10px 10px;
+      width: 100%;
+      height: 10px;
     }
     
     .fText {
@@ -75,6 +75,7 @@
       <br>
       <h3 class="header center amber-text lighten-4-text">Material Design Color Picker</h3>
       <div class="row center">
+        <div class="header center" id="diags"></div> 
         <h5 class="header col s12 light">Explore Material Design colors with color picker and palettes.</h5>
       </div>
       <div class="row center">
@@ -84,10 +85,10 @@
         <div id="pBack" class="btn-large waves-effect waves-light" style="background-color: black; color:white">
           <input id="output" value="#f44336"> ...&nbsp;Pick&nbsp;a&nbsp;Color
         </div>
-        <!-- <div id="diags"></div> -->
         <div>
           Powered by <a href="https://github.com/TNMEM/Material-Design-Color-Picker" target="_blank">My GitHub</a>,
           <a href="https://www.google.com/design/spec/style/color.html" target="_blank">Google Material Design</a>,
+          <a href="http://www.compuphase.com/cmetric.htm" target="_blank">Math</a>,
           <a href="http://jscolor.com/examples/" target="_blank">jscolor</a>,
           <a href="http://raphaeljs.com/" target="_blank">Raphaël</a>,
           <a href="http://bgrins.github.io/TinyColor/" target="_blank">TinyColor</a>,
