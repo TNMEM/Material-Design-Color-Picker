@@ -1,3 +1,6 @@
+// this line would have saved lots of async/ajax worries...
+$(window).load(function() {
+
 Raphael(function() {
     // get the elements...
     var initialColor = "#f44336";
@@ -125,9 +128,13 @@ Raphael(function() {
 
         $("div.cTable").append("<h6><em>Standard combinations</em></h6>");
         cTable("Complement", baseColor, "complement");
+        cTable("Complement ryb", baseColor, "complementryb");
         cTable("Split Complement", baseColor, "splitcomplement");
+        cTable("Split Complement ryb", baseColor, "splitcomplementryb");
         cTable("Triad", baseColor, "triad");
+        cTable("Triad ryb", baseColor, "triadryb");
         cTable("Tetrad", baseColor, "tetrad");
+        cTable("Tetrad ryb", baseColor, "tetradryb");
         cTable("Monochromatic", baseColor, "monochromatic");
         cTable("Analogous", baseColor, "analogous");
     }
@@ -138,8 +145,26 @@ Raphael(function() {
         var aList;
         var rowLimit = 10;
         switch (action) {
+            case ("triadryb"):
+                aList = rybtriad(tiny);
+                aList = aList.map(function(rgb) {
+                    return [rgb, ""];
+                    //return [ rgb, tinycolor.hexNames[ rgb.toHex()] ];
+                });
+                // convert array to md colors and send it to mdarray handler...
+                cTable(title + " MD", baseColor, "mdarray", matchMd(aList));
+                break;
             case ("triad"):
                 aList = tiny.triad();
+                aList = aList.map(function(rgb) {
+                    return [rgb, ""];
+                    //return [ rgb, tinycolor.hexNames[ rgb.toHex()] ];
+                });
+                // convert array to md colors and send it to mdarray handler...
+                cTable(title + " MD", baseColor, "mdarray", matchMd(aList));
+                break;
+            case ("tetradryb"):
+                aList = rybtetrad(tiny);
                 aList = aList.map(function(rgb) {
                     return [rgb, ""];
                     //return [ rgb, tinycolor.hexNames[ rgb.toHex()] ];
@@ -174,7 +199,18 @@ Raphael(function() {
                 // convert array to md colors and send it to mdarray handler...
                 cTable(title + " MD", baseColor, "mdarray", matchMd(aList));
                 break;
-            case ("complement"):
+            case ("complementryb"):
+                aList = [];
+                aList.push(tiny);
+                // tiny.complement only returns one color ... not array...
+                aList.push(rybcomplement(tiny));
+                aList = aList.map(function(rgb) {
+                    return [rgb, ""];
+                    //return [ rgb, tinycolor.hexNames[ rgb.toHex()] ];
+                });
+                cTable(title + " MD", baseColor, "mdarray",  matchMd(aList));
+                break;
+             case ("complement"):
                 aList = [];
                 aList.push(tiny);
                 // tiny.complement only returns one color ... not array...
@@ -208,6 +244,15 @@ Raphael(function() {
                 $("#helpside").append("<li>Footer: " + x[1][1] + " (" + x[1][0] + ")</li>");
                 
                 cTable(title + " MD", baseColor, "mdarray", x);
+                break;
+            case ("splitcomplementryb"):
+                aList = rybsplitcomplement(tiny);
+                aList = aList.map(function(rgb) {
+                    return [rgb, ""];
+                    //return [ rgb, tinycolor.hexNames[ rgb.toHex()] ];
+                });
+                // convert array to md colors and send it to mdarray handler...
+                cTable(title + " MD", baseColor, "mdarray", matchMd(aList));
                 break;
             case ("splitcomplement"):
                 aList = tiny.splitcomplement();
@@ -411,4 +456,7 @@ Raphael(function() {
         vv.innerHTML = Math.round(clr.v * 100) + "%";
         vl.innerHTML = Math.round(clr.l * 100) + "%";
     }
+});
+
+// end of the wait for window code at top...
 });
