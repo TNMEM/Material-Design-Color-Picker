@@ -208,7 +208,12 @@ Raphael(function() {
                     return [rgb, ""];
                     //return [ rgb, tinycolor.hexNames[ rgb.toHex()] ];
                 });
-                cTable(title + " MD", baseColor, "mdarray",  matchMd(aList));
+                var x = matchMd(aList);
+                $("#pBack").css("background-color", x[1][0]);
+                $("#pBack").attr("title", x[1][1] + " (" + x[1][0] + ")");
+                $("#pBack").css("color", findReadable( x[1][0] ));
+                
+                cTable(title + " MD", baseColor, "mdarray",  x);
                 break;
              case ("complement"):
                 aList = [];
@@ -234,9 +239,9 @@ Raphael(function() {
                 $("#footcolor").attr("title", x[1][1] + " (" + x[1][0] + ")");
                 $(".fText").css("color", findReadable( x[1][0] ));
                 
-                $("#pBack").css("background-color", x[1][0]);
-                $("#pBack").attr("title", x[1][1] + " (" + x[1][0] + ")");
-                $("#pBack").css("color", findReadable( x[1][0] ));
+                //$("#pBack").css("background-color", x[1][0]);
+                //$("#pBack").attr("title", x[1][1] + " (" + x[1][0] + ")");
+                //$("#pBack").css("color", findReadable( x[1][0] ));
                 
                 $("#diags").css("background", "linear-gradient(0deg, " + x[1][0] + " 50%, " + x[0][0] + " 50%");
 
