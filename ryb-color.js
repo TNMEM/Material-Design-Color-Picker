@@ -1,6 +1,9 @@
 // utility function to handle adobe translations.
-var mapRange = function(value, fromLower, fromUpper, toLower, toUpper) {
-  return (toLower + (value - fromLower) * ((toUpper - toLower) / (fromUpper - fromLower)));
+// general slope y intercept form...
+var mapRange = function(x, x1, x2, y1, y2) {
+  var aSlope = ((y2 - y1) / (x2 - x1));
+  var aSlopeIntercept = y1 - (aSlope * x1);
+  return ( x * aSlope + aSlopeIntercept);
 };
 
 // These two functions are ripped straight from Adobe Kuler source.
@@ -8,7 +11,7 @@ var mapRange = function(value, fromLower, fromUpper, toLower, toUpper) {
 
 var ryb2rgb = function(hue) {
   return (
-    hue < 60 ? hue * (35 / 60) :
+    hue < 60 ? mapRange(hue, 0, 60, 0, 35) :
     hue < 122 ? mapRange(hue, 60, 122, 35, 60) :
     hue < 165 ? mapRange(hue, 122, 165, 60, 120) :
     hue < 218 ? mapRange(hue, 165, 218, 120, 180) :
@@ -19,7 +22,7 @@ var ryb2rgb = function(hue) {
 
 var rgb2ryb = function(hue) {
   return (
-    hue < 35 ? hue * (60 / 35) :
+    hue < 35 ? mapRange(hue, 0, 35, 0, 60) :
     hue < 60 ? mapRange(hue, 35, 60, 60, 122) :
     hue < 120 ? mapRange(hue, 60, 120, 122, 165) :
     hue < 180 ? mapRange(hue, 120, 180, 165, 218) :
