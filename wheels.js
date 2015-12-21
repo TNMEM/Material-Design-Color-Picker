@@ -1,5 +1,7 @@
-// this line would have saved lots of async/ajax worries...
+// this line waits untill document loads and all other files too...
 $(window).load(function() {
+// this line waits untill document loads but doesn't care about other files...
+//$(function() {
 
 Raphael(function() {
     // get the elements...
@@ -106,8 +108,8 @@ Raphael(function() {
     // expects an an array of [tinycolor, "description"]
     // return new array of near-match Md colors...
     function matchMd(c) {
-        x = jQuery.map(c, function(n, i) {
-            y = [calcColor(tinycolor(n[0]).toRgb())];
+        var x = jQuery.map(c, function(n, i) {
+            var y = [calcColor(tinycolor(n[0]).toRgb())];
             return y;
         });
         return x;
@@ -146,7 +148,7 @@ Raphael(function() {
         var rowLimit = 10;
         switch (action) {
             case ("triadryb"):
-                aList = rybtriad(tiny);
+                aList = rybcolor.rybtriad(tiny);
                 aList = aList.map(function(rgb) {
                     return [rgb, ""];
                     //return [ rgb, tinycolor.hexNames[ rgb.toHex()] ];
@@ -164,7 +166,7 @@ Raphael(function() {
                 cTable(title + " MD", baseColor, "mdarray", matchMd(aList));
                 break;
             case ("tetradryb"):
-                aList = rybtetrad(tiny);
+                aList = rybcolor.rybtetrad(tiny);
                 aList = aList.map(function(rgb) {
                     return [rgb, ""];
                     //return [ rgb, tinycolor.hexNames[ rgb.toHex()] ];
@@ -203,7 +205,7 @@ Raphael(function() {
                 aList = [];
                 aList.push(tiny);
                 // tiny.complement only returns one color ... not array...
-                aList.push(rybcomplement(tiny));
+                aList.push(rybcolor.rybcomplement(tiny));
                 aList = aList.map(function(rgb) {
                     return [rgb, ""];
                     //return [ rgb, tinycolor.hexNames[ rgb.toHex()] ];
@@ -251,7 +253,7 @@ Raphael(function() {
                 cTable(title + " MD", baseColor, "mdarray", x);
                 break;
             case ("splitcomplementryb"):
-                aList = rybsplitcomplement(tiny);
+                aList = rybcolor.rybsplitcomplement(tiny);
                 aList = aList.map(function(rgb) {
                     return [rgb, ""];
                     //return [ rgb, tinycolor.hexNames[ rgb.toHex()] ];
@@ -330,9 +332,9 @@ Raphael(function() {
             if (! /(^#[0-9A-F]{6}$)/i.test(c) ) {
                 return;
             }
-            console.log("c1: ", c);
+            //console.log("c1: ", c);
             c = checkCalcColor(c);
-            console.log("c2: ", c);
+            //console.log("c2: ", c);
             $("#output").val(c);
             // don't have to import color...
             cp.importColor();
