@@ -1,9 +1,10 @@
 // namespace rybcolor defined in closure...
-// (function($) does NOT wait for document load, so no automatic executing code.
-// $(function($) does wait for document load, but needs jQuery.
-$(function($) {
+// (function() does NOT wait for document load, so no automatic executing code.
+// $(function() does wait for document load, but needs jQuery.
+// $(window).load(function() waits for document and all other files, but needs jQuery.
+(function(rybcolor, $, undefined) {
 
-  // private utility function to handle adobe translations.
+  // private utility function to handle adobe translations ... https://github.com/benknight/kuler-d3
   // general slope y intercept form...
   var mapRange = function(x, x1, x2, y1, y2) {
     var aSlope = ((y2 - y1) / (x2 - x1));
@@ -11,7 +12,7 @@ $(function($) {
     return (x * aSlope + aSlopeIntercept);
   };
 
-  // These two  private functions are ripped straight from Adobe Kuler source.
+  // These two  private functions are ripped straight from Adobe Kuler source ... https://github.com/benknight/kuler-d3
   // They convert between scientific hue to the color wheel's "artistic" hue.
 
   var ryb2rgb = function(hue) {
