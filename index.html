@@ -11,6 +11,7 @@
   <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'> -->
   <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="libs/spectrum.css" type="text/css" rel="stylesheet" />
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <style>
     /* diags is a way of getting a two-color square...*/
@@ -83,13 +84,13 @@
         <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started ... <input id="output" value="#f44336"></a>
         -->
         <div id="pBack" class="btn-large waves-effect waves-light" style="background-color: black; color:white">
-          <input id="output" value="#f44336"> ...&nbsp;Pick&nbsp;a&nbsp;Color
+          <input type="text" id="output"> ...&nbsp;Pick&nbsp;a&nbsp;Color
         </div>
         <div>
           Powered by <a href="https://github.com/TNMEM/Material-Design-Color-Picker" target="_blank">My GitHub</a>,
           <a href="https://www.google.com/design/spec/style/color.html" target="_blank">Google Material Design</a>,
           <a href="http://www.compuphase.com/cmetric.htm" target="_blank">Math</a>,
-          <a href="http://jscolor.com/examples/" target="_blank">jscolor</a>,
+          <a href="http://bgrins.github.io/spectrum/" target="_blank">Spectrum</a>,
           <a href="http://raphaeljs.com/" target="_blank">Raphaël</a>,
           <a href="http://bgrins.github.io/TinyColor/" target="_blank">TinyColor</a>,
           <a href="http://materializecss.com/" target="_blank">materializecss</a>
@@ -106,17 +107,6 @@
         <div class="row">
           <div class="col s12 m6">
             <div class="icon-block">
-              <div class="row">
-                <!-- jscolor.js < 2.0.0 is class="color" above is class="jscolor" -->
-                <!-- <input class="jscolor color  {hash:true}" value="#f44336" id="output"> -->
-                <!-- <input id="output" value="#f44336"> -->
-                <!--
-              <div class="input-field">
-                <input placeholder="Placeholder" id="output" type="text" class="validate">
-                <label for="output">Hex Color: Press enter to accept new typed color</label>
-              </div>
-              -->
-              </div>
               Click History (click updates picker):
               <br>
               <div class="z-depth-2" id="cHistory">
@@ -221,9 +211,9 @@
     <script src="js/init.js"></script>
     <script src="libs/raphael.js"></script>
     <script src='libs/tinycolor.js'></script>
-    <script src="libs/jscolor.js"></script>
+    <script src="libs/spectrum.js"></script>
     <script src="rybcolor.js"></script>
-    <script src="wheels.js"></script>
+    <script src="index.js"></script>
 
 </body>
 

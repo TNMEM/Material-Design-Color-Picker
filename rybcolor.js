@@ -1,10 +1,14 @@
-// namespace rybcolor defined in closure...
-// (function() does NOT wait for document load, so no automatic executing code.
-// $(function() does wait for document load, but needs jQuery.
-// $(window).load(function() waits for document and all other files, but needs jQuery.
-(function(rybcolor, $, undefined) {
+// namespace rybcolor defined in closure... "Immediately-invoked function expression" or IIFE relates data back to function args.
+// this is a stab at a javascript module...
 
-  // private utility function to handle adobe translations ... https://github.com/benknight/kuler-d3
+//  does NOT wait for anything, so don't do anything that relies on outside code.
+(function($, undefined) {
+// waits for document load, but needs jQuery.
+//$(function($, undefined) {
+// waits for document and all other files, but needs jQuery.
+//$(window).load(function($, undefined) {
+
+  // private function to handle adobe translations ... https://github.com/benknight/kuler-d3
   // general slope y intercept form...
   var mapRange = function(x, x1, x2, y1, y2) {
     var aSlope = ((y2 - y1) / (x2 - x1));
