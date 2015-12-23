@@ -8,6 +8,7 @@ $(window).load(function() {
     // get the elements...
     var initialColor = "#f44336";
     var currentFamilyMdColor = "Red";
+    var histNum = 0;
     var vr = document.getElementById("vr"),
         vg = document.getElementById("vg"),
         vb = document.getElementById("vb"),
@@ -20,7 +21,7 @@ $(window).load(function() {
         mdc = document.getElementById("mdColorsChk"),
         mdm = document.getElementById("mdMainChk"),
         mh = document.getElementById("mainhed");
-    mh.innerHTML = "Picker Not Locked to Material Colors";
+    mh.innerHTML = "Picker Unlocked";
 
     // get the json file with the material design mdColors
     // ... this is a javascript object ...
@@ -56,6 +57,8 @@ $(window).load(function() {
                     onchange(c);
                 },
             });
+            // the 2nd cell of the 1st table in .cTable is initial color...
+            $(".cTable td:eq(1)").trigger("click");
         });
     })();
 
@@ -361,7 +364,7 @@ $(window).load(function() {
         aTitle = $(this).attr("title");
         aColor = $(this).css("color");
         aBgcolor = $(this).attr("bgcolor");
-        $("#cHistory ul").prepend("<li style=\"background-color:" + aBgcolor + "; color:" + aColor + "\">Text: " + tinycolor(aColor).toHexString() + ": Background: " + aBgcolor + " " + aTitle + "</li>");
+        $("#cHistory ul").prepend("<li style=\"background-color:" + aBgcolor + "; color:" + aColor + "\">" + ++histNum + ". Text: " + tinycolor(aColor).toHexString() + ": Background: " + aBgcolor + " " + aTitle + "</li>");
         // update the picker with the new clicked color...
         $("#output").spectrum("set", tinycolor(aBgcolor));
         setDials(aBgcolor);
@@ -376,7 +379,7 @@ $(window).load(function() {
             mh.innerHTML = tmp[1];
         }
         else {
-            mh.innerHTML = "Picker Not Locked to Material Colors";
+            mh.innerHTML = "Picker Unlocked";
         }
         return c;
     }
