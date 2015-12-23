@@ -299,7 +299,7 @@ $(window).load(function() {
                 break;
         }
         var i, s;
-        s = "<table><thead></thead><tbody><tr><td>" + title + "</td>";
+        s = "<table class=\"z-depth-1\"><thead></thead><tbody><tr><td>" + title + "</td>";
         for (i = 0; i < aList.length; i++) {
             x = findReadable(aList[i][0].toHexString());
             s += "<td title=\"" + aList[i][1] + "\" bgcolor=" + aList[i][0].toHexString() + " style=\"color:" + x + ";\" data-rgb=\"" + aList[i][0].toHexString() + "\">" + x + "</td>";

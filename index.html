@@ -30,7 +30,7 @@
     #cHistory ul {
       background: #212121;
       padding: 2px;
-      height: 300px;
+      height: 100px;
       overflow: scroll;
     }
     
@@ -77,7 +77,7 @@
       <br>
       <h3 class="header center amber-text lighten-4-text">Material Design Color Picker</h3>
       <div class="row center">
-        <div class="header center" id="diags"></div>
+        <div class="z-depth-2 header center" id="diags"></div>
         <h5 class="header col s12 light">Explore Material Design colors with color picker and palettes.</h5>
       </div>
     </div>
@@ -85,9 +85,9 @@
     <div class="container">
       <div class="section">
         <div class="row">
-          
-          <div class="col s12 m4">
-            <div id="pBack" style="margin: 10px; padding: 10px" class="waves-effect waves-light">
+
+          <div class="col s12 m6">
+            <div id="pBack" style="margin: 10px; padding: 10px" class="z-depth-2 waves-effect waves-light">
               <input type="text" id="output"> ...&nbsp;Pick&nbsp;a&nbsp;Color
             </div>
             <div>
@@ -100,14 +100,14 @@
             </div>
           </div>
 
-          <div class="col s12 m4">
+          <div class="col s12 m6">
             <h5 id="mainhed"></h5>
             <p id="copy">
               <input type="checkbox" id="mdColorsChk">
-              <label for="mdColorsChk">&nbsp;Lock&nbsp;picker&nbsp;to&nbsp;Material&nbsp;Colors</label>
+              <label for="mdColorsChk">Lock picker to Material Colors</label>
               <br>
               <input type="checkbox" id="mdMainChk">
-              <label for="mdMainChk">&nbsp;Limit&nbsp;to&nbsp;Main&nbsp;'500'&nbsp;Colors</label>
+              <label for="mdMainChk">Limit to main '500' colors</label>
               <br>
             </p>
             Picker Values:
@@ -143,19 +143,18 @@
             </table>
           </div>
 
-          <div class="col s12 m4">
-            <div class="icon-block">
+        </div>
+        <div class="row">
+          <div class="col s12">
               Color Key Clicks:
               <br>
               <div class="z-depth-2" id="cHistory">
                 <ul></ul>
               </div>
-            </div>
           </div>
-
         </div>
-
       </div>
+
 
       <div class="section">
         <div class="row">
