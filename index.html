@@ -15,6 +15,7 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <style>
     /* diags is a way of getting a two-color square...*/
+    
     #diags {
       background: linear-gradient(0deg, grey 50%, black 50%);
       background-size: 10px 10px;
@@ -29,7 +30,7 @@
     #cHistory ul {
       background: #212121;
       padding: 2px;
-      height: 200px;
+      height: 300px;
       overflow: scroll;
     }
     
@@ -65,7 +66,7 @@
         </ul>
         <ul id='helpside' class='dropdown-content'>
         </ul>
-        
+
         <a href="#" data-activates="nav-mobile" class="button-collapse black"><i class="material-icons">menu</i></a>
       </div>
     </nav>
@@ -76,46 +77,30 @@
       <br>
       <h3 class="header center amber-text lighten-4-text">Material Design Color Picker</h3>
       <div class="row center">
-        <div class="header center" id="diags"></div> 
+        <div class="header center" id="diags"></div>
         <h5 class="header col s12 light">Explore Material Design colors with color picker and palettes.</h5>
       </div>
-      <div class="row center">
-        <!-- 
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started ... <input id="output" value="#f44336"></a>
-        -->
-        <div id="pBack" class="btn-large waves-effect waves-light" style="background-color: black; color:white">
-          <input type="text" id="output"> ...&nbsp;Pick&nbsp;a&nbsp;Color
-        </div>
-        <div>
-          Powered by <a href="https://github.com/TNMEM/Material-Design-Color-Picker" target="_blank">My GitHub</a>,
-          <a href="https://www.google.com/design/spec/style/color.html" target="_blank">Google Material Design</a>,
-          <a href="http://www.compuphase.com/cmetric.htm" target="_blank">Math</a>,
-          <a href="http://bgrins.github.io/spectrum/" target="_blank">Spectrum</a>,
-          <a href="http://raphaeljs.com/" target="_blank">Raphaël</a>,
-          <a href="http://bgrins.github.io/TinyColor/" target="_blank">TinyColor</a>,
-          <a href="http://materializecss.com/" target="_blank">materializecss</a>
-        </div>
-      </div>
-      <br>
-      <br>
-
     </div>
 
     <div class="container">
       <div class="section">
-        <!--   Icon Section   -->
         <div class="row">
-          <div class="col s12 m6">
-            <div class="icon-block">
-              Click History (click updates picker):
-              <br>
-              <div class="z-depth-2" id="cHistory">
-                <ul></ul>
-              </div>
+          
+          <div class="col s12 m4">
+            <div id="pBack" style="margin: 10px; padding: 10px" class="waves-effect waves-light">
+              <input type="text" id="output"> ...&nbsp;Pick&nbsp;a&nbsp;Color
+            </div>
+            <div>
+              Powered by <a href="https://github.com/TNMEM/Material-Design-Color-Picker" target="_blank">My GitHub</a>,
+              <a href="https://www.google.com/design/spec/style/color.html" target="_blank">Google Material Design</a>,
+              <a href="http://www.compuphase.com/cmetric.htm" target="_blank">Math</a>,
+              <a href="http://bgrins.github.io/spectrum/" target="_blank">Spectrum</a>,
+              <a href="http://bgrins.github.io/TinyColor/" target="_blank">TinyColor</a>,
+              <a href="http://materializecss.com/" target="_blank">materializecss</a>
             </div>
           </div>
 
-          <div class="col s12 m6">
+          <div class="col s12 m4">
             <h5 id="mainhed"></h5>
             <p id="copy">
               <input type="checkbox" id="mdColorsChk">
@@ -157,6 +142,17 @@
               </tbody>
             </table>
           </div>
+
+          <div class="col s12 m4">
+            <div class="icon-block">
+              Color Key Clicks:
+              <br>
+              <div class="z-depth-2" id="cHistory">
+                <ul></ul>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -174,10 +170,8 @@
           <div class="col l6 s12">
             <h5 class="fText">What to do</h5>
             <p class="fText">
-              Setting the "Pick a Color" or clicking any of the color key bars sets it as the main first color in 
-              "standard combinations" (the "MD" bars display closest Material-Design palette matches) and puts that pick 
-              in "history." The top nav and the footer are set to the two colors of the new "Complement MD." The picker 
-              and background are set to "Complement ryb MD."
+              Setting the "Pick a Color" or clicking any of the color key bars sets it as the main first color in "standard combinations" (the "MD" bars display closest Material-Design palette matches) and puts that pick in "history." The top nav and the footer are
+              set to the two colors of the new "Complement MD." The picker and background are set to "Complement ryb MD."
             </p>
 
           </div>
@@ -209,7 +203,6 @@
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
-    <script src="libs/raphael.js"></script>
     <script src='libs/tinycolor.js'></script>
     <script src="libs/spectrum.js"></script>
     <script src="rybcolor.js"></script>
