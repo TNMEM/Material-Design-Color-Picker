@@ -1,3 +1,7 @@
+// Internet Explorer Note:
+// ... Don't use anything but #ffffff style background-color tags.
+
+
 // this line waits untill document and all other files load...
 $(window).load(function() {
     // this line waits untill document loads but doesn't care about other files...
@@ -210,12 +214,13 @@ $(window).load(function() {
                     //return [ rgb, tinycolor.hexNames[ rgb.toHex()] ];
                 });
                 x = matchMd(aList);
-                $("#pBack").css("background-color", x[1][0]);
+                $("#pBack").css("background-color", x[1][0].toHexString());
                 $("#pBack").attr("title", x[1][1] + " (" + x[1][0] + ")");
                 $("#pBack").css("color", findReadable(x[1][0]));
 
                 var c1 = "#ffffff";
                 var c2 = x[0][0];
+                var c3 = x[1][0];
                 $("#patt2").css({
                     "background": "radial-gradient(circle at 50% 59%,  " + c1 + "  3%,  " + c2 + "  4%,  " + c2 + "  11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 25px 0,"
                         + "radial-gradient(circle at 50% 41%,  " + c2 + "  3%,  " + c1 + "  4%,  " + c1 + "  11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 25px 0,"
@@ -225,7 +230,7 @@ $(window).load(function() {
                         + "radial-gradient(circle at 0% 50%,  " + c2 + "  16%, rgba(54,78,39,0) 17%),"
                         + "radial-gradient(circle at 100% 50%,  " + c1 + "  16%, rgba(210,202,171,0) 17%) 25px 25px,"
                         + "radial-gradient(circle at 0% 50%,  " + c2 + "  16%, rgba(54,78,39,0) 17%) 25px 25px",
-                    "background-color": x[1][0],
+                    "background-color": c3.toHexString(),
                     "background-size": "50px 50px",
                     "height": "50px",
                     "width": "100%"
@@ -247,7 +252,7 @@ $(window).load(function() {
                 //console.log("aList: ", aList);
                 x = matchMd(aList);
                 //console.log("x: ", x);
-                $("#navcolor").css("background-color", x[0][0]);
+                $("#navcolor").css("background-color", x[0][0].toHexString());
                 $("#navcolor").attr("title", x[0][1] + " (" + x[0][0] + ")");
                 $("#logo-container").css("color", findReadable(x[0][0]));
 
@@ -256,11 +261,11 @@ $(window).load(function() {
                 $("#helpside").empty();
                 $("#helpside").append("<li>Top Nav: " + x[0][1] + " (" + x[0][0] + ")</li>");
 
-                $("#footcolor").css("background-color", x[1][0]);
+                $("#footcolor").css("background-color", x[1][0].toHexString());
                 $("#footcolor").attr("title", x[1][1] + " (" + x[1][0] + ")");
                 $(".fText").css("color", findReadable(x[1][0]));
 
-                //$("#pBack").css("background-color", x[1][0]);
+                //$("#pBack").css("background-color", x[1][0].toHexString());
                 //$("#pBack").attr("title", x[1][1] + " (" + x[1][0] + ")");
                 //$("#pBack").css("color", findReadable( x[1][0] ));
 
@@ -273,6 +278,7 @@ $(window).load(function() {
                 
                 var c1 = "#ffffff";
                 var c2 = x[0][0];
+                var c3 = x[1][0];
                 $("#patt").css({
                     "background": "radial-gradient(circle at 50% 59%,  " + c1 + "  3%,  " + c2 + "  4%,  " + c2 + "  11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 25px 0,"
                         + "radial-gradient(circle at 50% 41%,  " + c2 + "  3%,  " + c1 + "  4%,  " + c1 + "  11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 25px 0,"
@@ -282,7 +288,7 @@ $(window).load(function() {
                         + "radial-gradient(circle at 0% 50%,  " + c2 + "  16%, rgba(54,78,39,0) 17%),"
                         + "radial-gradient(circle at 100% 50%,  " + c1 + "  16%, rgba(210,202,171,0) 17%) 25px 25px,"
                         + "radial-gradient(circle at 0% 50%,  " + c2 + "  16%, rgba(54,78,39,0) 17%) 25px 25px",
-                    "background-color": x[1][0],
+                    "background-color": c3.toHexString(),
                     "background-size": "50px 50px",
                     "height": "50px",
                     "width": "100%"
@@ -403,7 +409,7 @@ $(window).load(function() {
         aTitle = $(this).attr("title");
         aColor = $(this).css("color");
         aBgcolor = $(this).attr("bgcolor");
-        $("#cHistory ul").prepend("<li style=\"background-color:" + aBgcolor + "; color:" + aColor + "\">" + ++histNum + ". Text: " + tinycolor(aColor).toHexString() + ": Background: " + aBgcolor + " " + aTitle + "</li>");
+        $("#cHistory ul").prepend("<li style=\"background-color:" + tinycolor(aBgcolor).toHexString() + "; color:" + aColor + "\">" + ++histNum + ". Text: " + tinycolor(aColor).toHexString() + ": Background: " + aBgcolor + " " + aTitle + "</li>");
         // update the picker with the new clicked color...
         $("#output").spectrum("set", tinycolor(aBgcolor));
         setDials(aBgcolor);
