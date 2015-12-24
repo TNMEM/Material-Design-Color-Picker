@@ -214,6 +214,23 @@ $(window).load(function() {
                 $("#pBack").attr("title", x[1][1] + " (" + x[1][0] + ")");
                 $("#pBack").css("color", findReadable(x[1][0]));
 
+                var c1 = "#ffffff";
+                var c2 = x[0][0];
+                $("#patt2").css({
+                    "background": "radial-gradient(circle at 50% 59%,  " + c1 + "  3%,  " + c2 + "  4%,  " + c2 + "  11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 25px 0,"
+                        + "radial-gradient(circle at 50% 41%,  " + c2 + "  3%,  " + c1 + "  4%,  " + c1 + "  11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 25px 0,"
+                        + "radial-gradient(circle at 50% 59%,  " + c1 + "  3%,  " + c2 + "  4%,  " + c2 + "  11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 0 25px,"
+                        + "radial-gradient(circle at 50% 41%,  " + c2 + "  3%,  " + c1 + "  4%,  " + c1 + "  11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 0 25px,"
+                        + "radial-gradient(circle at 100% 50%,  " + c1 + "  16%, rgba(210,202,171,0) 17%),"
+                        + "radial-gradient(circle at 0% 50%,  " + c2 + "  16%, rgba(54,78,39,0) 17%),"
+                        + "radial-gradient(circle at 100% 50%,  " + c1 + "  16%, rgba(210,202,171,0) 17%) 25px 25px,"
+                        + "radial-gradient(circle at 0% 50%,  " + c2 + "  16%, rgba(54,78,39,0) 17%) 25px 25px",
+                    "background-color": x[1][0],
+                    "background-size": "50px 50px",
+                    "height": "50px",
+                    "width": "100%"
+                });
+                
                 cTable(title + " MD", baseColor, "mdarray", x);
                 break;
             case ("complement"):
@@ -247,7 +264,29 @@ $(window).load(function() {
                 //$("#pBack").attr("title", x[1][1] + " (" + x[1][0] + ")");
                 //$("#pBack").css("color", findReadable( x[1][0] ));
 
-                $("#diags").css("background", "linear-gradient(0deg, " + x[1][0] + " 50%, " + x[0][0] + " 50%");
+                /*$("#patt").css({
+                    "background": "linear-gradient(45deg, " + x[1][0] + " 50%, " + x[0][0] + " 50%",
+                    "background-size": "10px 10px",
+                    "width": "100%",
+                    "height": "10px"
+                });*/
+                
+                var c1 = "#ffffff";
+                var c2 = x[0][0];
+                $("#patt").css({
+                    "background": "radial-gradient(circle at 50% 59%,  " + c1 + "  3%,  " + c2 + "  4%,  " + c2 + "  11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 25px 0,"
+                        + "radial-gradient(circle at 50% 41%,  " + c2 + "  3%,  " + c1 + "  4%,  " + c1 + "  11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 25px 0,"
+                        + "radial-gradient(circle at 50% 59%,  " + c1 + "  3%,  " + c2 + "  4%,  " + c2 + "  11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 0 25px,"
+                        + "radial-gradient(circle at 50% 41%,  " + c2 + "  3%,  " + c1 + "  4%,  " + c1 + "  11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 0 25px,"
+                        + "radial-gradient(circle at 100% 50%,  " + c1 + "  16%, rgba(210,202,171,0) 17%),"
+                        + "radial-gradient(circle at 0% 50%,  " + c2 + "  16%, rgba(54,78,39,0) 17%),"
+                        + "radial-gradient(circle at 100% 50%,  " + c1 + "  16%, rgba(210,202,171,0) 17%) 25px 25px,"
+                        + "radial-gradient(circle at 0% 50%,  " + c2 + "  16%, rgba(54,78,39,0) 17%) 25px 25px",
+                    "background-color": x[1][0],
+                    "background-size": "50px 50px",
+                    "height": "50px",
+                    "width": "100%"
+                });
 
                 $("#helpnav").append("<li>Footer: " + x[1][1] + " (" + x[1][0] + ")</li>");
                 $("#helpside").append("<li>Footer: " + x[1][1] + " (" + x[1][0] + ")</li>");

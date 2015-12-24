@@ -14,15 +14,6 @@
   <link href="libs/spectrum.css" type="text/css" rel="stylesheet" />
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <style>
-    /* diags is a way of getting a two-color square...*/
-    
-    #diags {
-      background: linear-gradient(0deg, grey 50%, black 50%);
-      background-size: 10px 10px;
-      width: 100%;
-      height: 10px;
-    }
-    
     .fText {
       color: white;
     }
@@ -77,9 +68,12 @@
       <br>
       <h3 class="header center amber-text lighten-4-text">Material Design Color Picker</h3>
       <div class="row center">
-        <div class="z-depth-2 header center" id="diags"></div>
+        <div class="header center"></div>
         <h5 class="header col s12 light">Explore Material Design colors with color picker and palettes.</h5>
       </div>
+      <div id="patt"></div>
+      <div id="patt2"></div>
+
     </div>
 
     <div class="container">
@@ -146,10 +140,10 @@
         </div>
         <div class="row">
           <div class="col s12">
-              Color Key Click History:
-              <div class="z-depth-2" id="cHistory">
-                <ul></ul>
-              </div>
+            Color Key Click History:
+            <div class="z-depth-2" id="cHistory">
+              <ul></ul>
+            </div>
           </div>
         </div>
       </div>
