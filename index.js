@@ -220,7 +220,7 @@ $(window).load(function() {
 
                 var c1 = findReadable(x[0][0]); // text color main
                 var c2 = x[0][0]; // main color
-                var c3 = x[1][0]; // background color
+                var c3 = x[1][0]; // complement color
                 $("#patt2").css({
                     "background": "radial-gradient(circle at 50% 59%,  " + c1 + "  3%,  " + c2 + "  4%,  " + c2 + "  11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 25px 0,"
                         + "radial-gradient(circle at 50% 41%,  " + c2 + "  3%,  " + c1 + "  4%,  " + c1 + "  11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 25px 0,"
@@ -238,7 +238,7 @@ $(window).load(function() {
                 });
                 $("#patt2 span").css({
                     "background-color": c3.toHexString(),
-                    "color": findReadable(x[1][0]), // text color background
+                    "color": findReadable(c3), // text color complement
                 });
                 
                 cTable(title + " MD", baseColor, "mdarray", x);
@@ -283,7 +283,7 @@ $(window).load(function() {
                 
                 var c1 = findReadable(x[0][0]); // text color main
                 var c2 = x[0][0]; // main color
-                var c3 = x[1][0]; // background color
+                var c3 = x[1][0]; // complement color
                 $("#patt").css({
                     "background": "radial-gradient(circle at 50% 59%,  " + c1 + "  3%,  " + c2 + "  4%,  " + c2 + "  11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 25px 0,"
                         + "radial-gradient(circle at 50% 41%,  " + c2 + "  3%,  " + c1 + "  4%,  " + c1 + "  11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 25px 0,"
@@ -301,7 +301,7 @@ $(window).load(function() {
                 });
                 $("#patt span").css({
                     "background-color": c3.toHexString(),
-                    "color": findReadable(x[1][0]), // text color background
+                    "color": findReadable(c3), // text color complement
                 });
                 
                 $("#helpnav").append("<li>Footer: " + x[1][1] + " (" + x[1][0] + ")</li>");
