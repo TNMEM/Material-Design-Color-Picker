@@ -218,7 +218,7 @@ $(window).load(function() {
                 $("#pBack").attr("title", x[1][1] + " (" + x[1][0] + ")");
                 $("#pBack").css("color", findReadable(x[1][0]));
 
-                var c1 = "#ffffff";
+                var c1 = findReadable(x[1][0]);
                 var c2 = x[0][0];
                 var c3 = x[1][0];
                 $("#patt2").css({
@@ -238,7 +238,7 @@ $(window).load(function() {
                 });
                 $("#patt2 span").css({
                     "background-color": c3.toHexString(),
-                    "color": findReadable(x[1][0]),
+                    "color": c1,
                 });
                 
                 cTable(title + " MD", baseColor, "mdarray", x);
@@ -281,7 +281,7 @@ $(window).load(function() {
                     "height": "10px"
                 });*/
                 
-                var c1 = "#ffffff";
+                var c1 = findReadable(x[1][0]);
                 var c2 = x[0][0];
                 var c3 = x[1][0];
                 $("#patt").css({
@@ -301,7 +301,7 @@ $(window).load(function() {
                 });
                 $("#patt span").css({
                     "background-color": c3.toHexString(),
-                    "color": findReadable(x[1][0]),
+                    "color": c1,
                 });
 
                 $("#helpnav").append("<li>Footer: " + x[1][1] + " (" + x[1][0] + ")</li>");
