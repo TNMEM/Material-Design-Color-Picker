@@ -218,9 +218,9 @@ $(window).load(function() {
                 $("#pBack").attr("title", x[1][1] + " (" + x[1][0] + ")");
                 $("#pBack").css("color", findReadable(x[1][0]));
 
-                var c1 = findReadable(x[1][0]);
-                var c2 = x[0][0];
-                var c3 = x[1][0];
+                var c1 = findReadable(x[0][0]); // text color main
+                var c2 = x[0][0]; // main color
+                var c3 = x[1][0]; // background color
                 $("#patt2").css({
                     "background": "radial-gradient(circle at 50% 59%,  " + c1 + "  3%,  " + c2 + "  4%,  " + c2 + "  11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 25px 0,"
                         + "radial-gradient(circle at 50% 41%,  " + c2 + "  3%,  " + c1 + "  4%,  " + c1 + "  11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 25px 0,"
@@ -238,7 +238,7 @@ $(window).load(function() {
                 });
                 $("#patt2 span").css({
                     "background-color": c3.toHexString(),
-                    "color": c1,
+                    "color": findReadable(x[1][0]), // text color background
                 });
                 
                 cTable(title + " MD", baseColor, "mdarray", x);
@@ -281,9 +281,9 @@ $(window).load(function() {
                     "height": "10px"
                 });*/
                 
-                var c1 = findReadable(x[1][0]);
-                var c2 = x[0][0];
-                var c3 = x[1][0];
+                var c1 = findReadable(x[0][0]); // text color main
+                var c2 = x[0][0]; // main color
+                var c3 = x[1][0]; // background color
                 $("#patt").css({
                     "background": "radial-gradient(circle at 50% 59%,  " + c1 + "  3%,  " + c2 + "  4%,  " + c2 + "  11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 25px 0,"
                         + "radial-gradient(circle at 50% 41%,  " + c2 + "  3%,  " + c1 + "  4%,  " + c1 + "  11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 25px 0,"
@@ -301,9 +301,9 @@ $(window).load(function() {
                 });
                 $("#patt span").css({
                     "background-color": c3.toHexString(),
-                    "color": c1,
+                    "color": findReadable(x[1][0]), // text color background
                 });
-
+                
                 $("#helpnav").append("<li>Footer: " + x[1][1] + " (" + x[1][0] + ")</li>");
                 $("#helpside").append("<li>Footer: " + x[1][1] + " (" + x[1][0] + ")</li>");
 
