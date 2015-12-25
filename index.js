@@ -232,8 +232,13 @@ $(window).load(function() {
                         + "radial-gradient(circle at 0% 50%,  " + c2 + "  16%, rgba(54,78,39,0) 17%) 25px 25px",
                     "background-color": c3.toHexString(),
                     "background-size": "50px 50px",
+                    "text-align": "right",
                     "height": "50px",
                     "width": "100%"
+                });
+                $("#patt2 span").css({
+                    "background-color": c3.toHexString(),
+                    "color": findReadable(x[1][0]),
                 });
                 
                 cTable(title + " MD", baseColor, "mdarray", x);
@@ -290,8 +295,13 @@ $(window).load(function() {
                         + "radial-gradient(circle at 0% 50%,  " + c2 + "  16%, rgba(54,78,39,0) 17%) 25px 25px",
                     "background-color": c3.toHexString(),
                     "background-size": "50px 50px",
+                    "text-align": "right",
                     "height": "50px",
                     "width": "100%"
+                });
+                $("#patt span").css({
+                    "background-color": c3.toHexString(),
+                    "color": findReadable(x[1][0]),
                 });
 
                 $("#helpnav").append("<li>Footer: " + x[1][1] + " (" + x[1][0] + ")</li>");

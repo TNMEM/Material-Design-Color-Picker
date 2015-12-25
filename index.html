@@ -14,6 +14,12 @@
   <link href="libs/spectrum.css" type="text/css" rel="stylesheet" />
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <style>
+    #pBack {
+      margin: 10px;
+      padding: 10px;
+      width: 90%
+    }
+    
     .fText {
       color: white;
     }
@@ -42,7 +48,7 @@
 </head>
 
 <body>
-  <div class="navbar-fixed">
+  <div class="navbar">
     <!-- #f44336 is the same as materializecss red -->
     <nav id="navcolor" role="navigation">
       <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">M.D.C.P.</a>
@@ -60,12 +66,16 @@
 
         <a href="#" data-activates="nav-mobile" class="button-collapse black"><i class="material-icons">menu</i></a>
       </div>
+    <div id="patt"><span>&nbsp;&nbsp;complement md&nbsp;&nbsp;</span></div>
+    <div id="patt2" class="z-depth-3"><span>&nbsp;&nbsp;complement ryb md&nbsp;&nbsp;</span></div>
     </nav>
   </div>
   <div class="section no-pad-bot" id="index-banner">
-          <div id="patt"></div>
-      <div id="patt2"></div>
     <div class="container">
+      <br>
+      <br>
+      <br>
+      <br>
       <br>
       <br>
       <h3 class="header center amber-text lighten-4-text">Material Design Color Picker</h3>
@@ -80,7 +90,7 @@
         <div class="row">
 
           <div class="col s12 m6">
-            <div id="pBack" style="margin: 10px; padding: 10px; width: 100%" class="z-depth-2 waves-effect waves-light">
+            <div id="pBack" class="z-depth-2 waves-effect waves-light">
               <input type="text" id="output"> ...&nbsp;Pick&nbsp;a&nbsp;Color
             </div>
             <div>
@@ -161,10 +171,8 @@
           <div class="col l6 s12">
             <h5 class="fText">What to do</h5>
             <p class="fText">
-              Clicking a color key item saves it to "history" and sets it as the first color in 
-              "standard combinations" (the "MD" bars show closest Material-Design matches). 
-              The top nav and the footer are set to "Complement MD." The picker background is set to"Complement ryb MD" 
-              from the Adobe alternate color wheel. Watch the top pattern and tooltips too.
+              Clicking a color key item saves it to "history" and sets it as the first color in "standard combinations" (the "MD" bars show closest Material-Design matches). The top nav and the footer are set to "Complement MD." The picker background is set to"Complement
+              ryb MD" from the Adobe alternate color wheel. Watch the top pattern and tooltips too.
             </p>
 
           </div>
@@ -180,8 +188,7 @@
           <div class="col l3 s12">
             <h5 class="fText">Have fun</h5>
             <p class="fText">
-              Question: How do Google's Material Design colors relate to "standard" color-theory combinations like 
-              Complement and Triad? Play around and have some fun.
+              Question: How do Google's Material Design colors relate to "standard" color-theory combinations like Complement and Triad? Play around and have some fun.
             </p>
           </div>
         </div>
